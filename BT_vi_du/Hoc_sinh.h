@@ -26,6 +26,7 @@ void Hoc_sinh::Nhap() {
 	getline(cin, ho_ten);
 	cin >> toan;
 	cin >> van; 
+	XuLy();
 }
 
 void Hoc_sinh::Xuat() {
