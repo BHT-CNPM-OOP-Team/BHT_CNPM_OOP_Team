@@ -1,0 +1,100 @@
+class Phan_so
+{
+	private:
+		int tu;
+		int mau;
+	public:
+    //Nhóm toán tử nhập xuất
+		friend istream& operator >> (istream&, Phan_so&);
+		friend ostream& operator << (ostream&, Phan_so&);
+    //Nhóm toán tử so sanh
+		bool operator>(const Phan_so&);
+		bool operator<(const Phan_so&);
+		bool operator>=(const Phan_so&);
+		bool operator<=(const Phan_so&);
+		bool operator==(const Phan_so&);
+		bool operator!=(const Phan_so&);
+};
+int main()
+{
+    CPhanSo a, b;
+    cout << "Nhap phan so a: \n";
+    cin >> a;
+    cout << "Nhap phan so b: \n";
+    cin >> b;
+    if (a > b)
+      cout << "Phan so a lon hon phan so b\n";
+    else
+      cout << "Phan so a khong lon hon phan so b\n";
+    return 1;
+}
+istream& operator >> (istream& is, Phan_so& ps)
+{
+	cout << "Nhap tu: ";
+	is >> ps.tu;
+	cout << "Nhap mau: ";
+	is >> ps.mau;
+	return is;
+}
+int main()
+{
+
+}
+ostream& operator<<(ostream& os, Phan_so& ps)
+{
+	os << ps.tu << "/" << ps.mau;
+	return os;
+}
+bool Phan_so::operator>(const Phan_so& x)
+{
+	float gt1 = (float)tu / mau;
+	float gt2 = (float)x.tu / x.mau;
+	if (gt1 > gt2)
+		return true;
+  return false;
+}
+
+bool Phan_so::operator<(const Phan_so& x)
+{
+	float gt1 = (float)tu / mau;
+	float gt2 = (float)x.tu / x.mau;
+	if (gt1 < gt2)
+		return true;
+  return false;
+}
+
+bool Phan_so::operator>=(const Phan_so& x)
+{
+	float gt1 = (float)tu / mau;
+	float gt2 = (float)x.tu / x.mau;
+	if (gt1 >= gt2)
+		return true;
+  return false;
+}
+
+bool Phan_so::operator<=(const Phan_so& x)
+{
+	float gt1 = (float)tu / mau;
+	float gt2 = (float)x.tu / x.mau;
+	if (gt1 <= gt2)
+		return true;
+  return false;
+}
+
+bool Phan_so::operator==(const Phan_so& x)
+{
+	float gt1 = (float)tu / mau;
+	float gt2 = (float)x.tu / x.mau;
+	if (gt1 == gt2)
+		return true;
+  return false;
+}
+
+bool Phan_so::operator!=(const Phan_so& x)
+{
+	float gt1 = (float)tu / mau;
+	float gt2 = (float)x.tu / x.mau;
+	if (gt1 != gt2)
+		return true;
+  return false;
+}
